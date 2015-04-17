@@ -1,5 +1,11 @@
 package main
 
+/*
+init() is a special function called before main.
+
+I managed to read two books before learning this one.
+*/
+
 import(
   "fmt"
   )
