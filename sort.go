@@ -1,5 +1,10 @@
 package main
 
+/*
+Sorting is accomplished by defining Len(), Swap() and Less() and
+then defining a sort as a type of that array (ByAge in this example).
+*/
+
 import (
 	"fmt"
 	"sort"
