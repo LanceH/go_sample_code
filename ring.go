@@ -1,5 +1,9 @@
 package main
+/*
+container/ring is kind of like a linked list, but it keeps going around.
 
+Explores how rings are merged.
+*/
 import (
 	"container/ring"
 	"fmt"
