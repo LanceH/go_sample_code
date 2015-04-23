@@ -3,8 +3,7 @@ package main
 import ("fmt")
 
 func main() {
-  a := []int{1,2,3,4}
-  fmt.Println(Sum(a))
+  fmt.Println([4]int{1,2,3,4})
 }
 
 func Sum(a []int) (s int){
@@ -12,4 +11,11 @@ func Sum(a []int) (s int){
     s += i
   }
   return s
+}
+
+func Average(a []int) (s float64){
+  for _, i := range a {
+    s += float64(i)
+  }
+  return s / float64(len(a))
 }
