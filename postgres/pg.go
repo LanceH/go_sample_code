@@ -27,12 +27,12 @@ func main() {
 	for rows.Next() {
 		var id int
     var typ string
-    var updated_at time.Time
-		err = rows.Scan(&id, &typ, &updated_at)
+    var updatedAt time.Time
+		err = rows.Scan(&id, &typ, &updatedAt)
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		fmt.Println(id, typ, updated_at)
+		fmt.Println(id, typ, updatedAt)
 	}
 }
