@@ -12,7 +12,6 @@ func main() {
 	fmt.Println("Starting in Main()")
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, os.Kill)
-  signal.Notify(c, os.)
 	s := <-c
 	fmt.Println("Received signal: ", s)
 }
