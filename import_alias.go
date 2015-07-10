@@ -1,14 +1,15 @@
 package main
 
 /*
+import fmt directly to main (no 'fmt' prefix)
 alias the math package to 'm'
 */
 
 import (
-  "fmt"
+  . "fmt"
   m "math"
 )
 
 func main() {
-  fmt.Println(m.Pi)
+  Println(m.Pi)
 }
