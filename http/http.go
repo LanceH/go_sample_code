@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
   "html/template"
 	"math/rand"
 	"net/http"
@@ -15,7 +16,25 @@ func main() {
 	http.HandleFunc("/paper", paper)
 	http.HandleFunc("/scissors", scissors)
 
+	http.HandleFunc("/cookieset", cSet)
+	http.HandleFunc("/cookieread", cRead)
+
 	http.ListenAndServe(":8080", nil)
+}
+
+func cSet(w http.ResponseWriter, r *http.Request) {
+	cookie := &http.Cookie{Name: "test", Value: "Cookies!"}
+	http.SetCookie(w, cookie)
+	fmt.Fprintf(w, "cookie set")
+}
+
+func cRead(w http.ResponseWriter, r *http.Request) {
+	cookie, err := r.Cookie("test")
+	if err != nil {
+		fmt.Fprintf(w, "No cookies")
+	} else {
+		fmt.Fprintf(w, "cookie: %s", cookie.Value)
+	}
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
