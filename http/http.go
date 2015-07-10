@@ -101,6 +101,17 @@ func scissors(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w,p)
 }
 
+type User struct {
+	id string
+	Record *Record
+}
+
+type Record struct {
+	W int
+	L int
+	D int
+}
+
 type Page struct {
 	W int
 	L int
