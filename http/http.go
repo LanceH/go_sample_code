@@ -5,12 +5,14 @@ import (
   "html/template"
 	"math/rand"
 	"net/http"
+	"time"
 )
 
 var pieces []string = []string{"rock", "paper", "scissors"}
 var win, loss, draw int
 
 func main() {
+	rand.Seed( time.Now().UTC().UnixNano())
 	http.HandleFunc("/", root)
 	http.HandleFunc("/rock", rock)
 	http.HandleFunc("/paper", paper)
