@@ -1,7 +1,7 @@
 package main
 
 /*
-go test
+go test -v
 */
 
 import "testing"
