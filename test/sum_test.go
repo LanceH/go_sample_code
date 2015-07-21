@@ -1,7 +1,13 @@
 package main
 
 /*
+// -v flag will print all tests
 go test -v
+
+// Run specific tests
+go test -v -run Average
+go test -v -run Sum
+
 go test -bench .
 */
 
