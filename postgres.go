@@ -12,7 +12,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	rows, err := db.Query("select name, id from blah")
+	rows, err := db.Query("select * from blah")
   if err != nil {
     fmt.Println(err)
   }
