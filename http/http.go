@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-  "html/template"
+	"html/template"
 	"math/rand"
 	"net/http"
 	"time"
@@ -12,7 +12,7 @@ var pieces []string = []string{"rock", "paper", "scissors"}
 var win, loss, draw int
 
 func main() {
-	rand.Seed( time.Now().UTC().UnixNano())
+	rand.Seed(time.Now().UTC().UnixNano())
 	http.HandleFunc("/", root)
 	http.HandleFunc("/rock", rock)
 	http.HandleFunc("/paper", paper)
@@ -43,7 +43,7 @@ func root(w http.ResponseWriter, r *http.Request) {
 	result := "Choose Wisely"
 	t, _ := template.ParseFiles("root.html")
 	p := &Page{W: win, L: loss, D: draw, Result: result}
-	t.Execute(w,p)
+	t.Execute(w, p)
 }
 
 func rock(w http.ResponseWriter, r *http.Request) {
@@ -62,7 +62,7 @@ func rock(w http.ResponseWriter, r *http.Request) {
 	}
 	t, _ := template.ParseFiles("root.html")
 	p := &Page{W: win, L: loss, D: draw, Result: result}
-	t.Execute(w,p)
+	t.Execute(w, p)
 }
 
 func paper(w http.ResponseWriter, r *http.Request) {
@@ -81,7 +81,7 @@ func paper(w http.ResponseWriter, r *http.Request) {
 	}
 	t, _ := template.ParseFiles("root.html")
 	p := &Page{W: win, L: loss, D: draw, Result: result}
-	t.Execute(w,p)
+	t.Execute(w, p)
 }
 
 func scissors(w http.ResponseWriter, r *http.Request) {
@@ -100,11 +100,11 @@ func scissors(w http.ResponseWriter, r *http.Request) {
 	}
 	t, _ := template.ParseFiles("root.html")
 	p := &Page{W: win, L: loss, D: draw, Result: result}
-	t.Execute(w,p)
+	t.Execute(w, p)
 }
 
 type User struct {
-	id string
+	id     string
 	Record *Record
 }
 
@@ -115,8 +115,8 @@ type Record struct {
 }
 
 type Page struct {
-	W int
-	L int
-	D int
+	W      int
+	L      int
+	D      int
 	Result string
 }

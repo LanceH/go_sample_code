@@ -10,7 +10,7 @@ import (
 	"fmt"
 	_ "github.com/lib/pq"
 	"log"
-  "time"
+	"time"
 )
 
 func main() {
@@ -26,8 +26,8 @@ func main() {
 	defer rows.Close()
 	for rows.Next() {
 		var id int
-    var typ string
-    var updatedAt time.Time
+		var typ string
+		var updatedAt time.Time
 		err = rows.Scan(&id, &typ, &updatedAt)
 		if err != nil {
 			fmt.Println(err)

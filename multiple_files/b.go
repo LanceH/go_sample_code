@@ -1,7 +1,9 @@
 package main
 
-import("fmt")
+import (
+	"fmt"
+)
 
 func middle() {
-  fmt.Println("middle")
+	fmt.Println("middle")
 }
