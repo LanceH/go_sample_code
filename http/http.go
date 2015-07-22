@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var pieces []string = []string{"rock", "paper", "scissors"}
+var pieces = []string{"rock", "paper", "scissors"}
 var win, loss, draw int
 
 func main() {
@@ -103,17 +103,20 @@ func scissors(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, p)
 }
 
+// User is currently unused
 type User struct {
 	id     string
 	Record *Record
 }
 
+// Record is a summary of results for a User
 type Record struct {
 	W int
 	L int
 	D int
 }
 
+// Page holds the data to be used when rendering any page
 type Page struct {
 	W      int
 	L      int
