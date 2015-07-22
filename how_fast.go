@@ -9,31 +9,30 @@ If a data race doesn't happen, then it should print out
 count every second
 */
 
-
 import (
-  "fmt"
-  "time"
-  "runtime"
+	"fmt"
+	"runtime"
+	"time"
 )
 
 var count int64
 
 func main() {
-  runtime.GOMAXPROCS(2)
+	runtime.GOMAXPROCS(2)
 
-  fmt.Println("main")
-  go Counter()
-  fmt.Println("after Counter()")
-  for {
-    count++
-  }
+	fmt.Println("main")
+	go Counter()
+	fmt.Println("after Counter()")
+	for {
+		count++
+	}
 }
 
 // Counter prints the count every second
 func Counter() {
-  fmt.Println("In Counter()")
-  for {
-    fmt.Println(count)
-    time.Sleep(time.Second)
-  }
+	fmt.Println("In Counter()")
+	for {
+		fmt.Println(count)
+		time.Sleep(time.Second)
+	}
 }

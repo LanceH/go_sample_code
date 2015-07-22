@@ -10,10 +10,10 @@ future versions of go.
 */
 
 import (
-  . "fmt"
-  m "math"
+	. "fmt"
+	m "math"
 )
 
 func main() {
-  Println(m.Pi)
+	Println(m.Pi)
 }

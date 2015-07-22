@@ -4,14 +4,16 @@ package main
 I'm going to try some of this at work.
 */
 
-import("fmt")
+import (
+	"fmt"
+)
 
 var señor = "Hòla Señor"
 
 func main() {
-  界()
+	界()
 }
 
 func 界() {
-  fmt.Println(señor)
+	fmt.Println(señor)
 }

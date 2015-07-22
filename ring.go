@@ -1,4 +1,5 @@
 package main
+
 /*
 container/ring is kind of like a linked list, but it keeps going around.
 
@@ -34,9 +35,8 @@ func main() {
 	r4 := r3.Next()
 	fmt.Println("r3:", r3.Value.(Pos).x, "r4", r4.Value.(Pos).x)
 
-
 	// Iterate through ring and print its contents.
-	for i := 0; i < r.Len() * 2; i++ {
+	for i := 0; i < r.Len()*2; i++ {
 		fmt.Println(r.Value.(Pos).x)
 		fmt.Println(r.Value.(Pos).y)
 		r = r.Next()

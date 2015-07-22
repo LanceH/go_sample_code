@@ -10,7 +10,6 @@ import (
 	"sort"
 )
 
-
 // Person relates a person by name to their age.
 type Person struct {
 	Name string
