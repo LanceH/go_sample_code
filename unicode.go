@@ -6,7 +6,7 @@ I'm going to try some of this at work.
 
 import("fmt")
 
-var señor string = "Hòla Señor"
+var señor = "Hòla Señor"
 
 func main() {
   界()

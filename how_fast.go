@@ -16,7 +16,7 @@ import (
   "runtime"
 )
 
-var count int64 = 0
+var count int64
 
 func main() {
   runtime.GOMAXPROCS(2)
