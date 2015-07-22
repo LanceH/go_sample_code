@@ -2,7 +2,7 @@ package main
 
 /* this program has some weirdness
 because count is both read and written to
-by different threads, potentially as the same time
+by different threads, potentially at the same time
 causing a data race -- bad
 
 If a data race doesn't happen, then it should print out
