@@ -13,7 +13,7 @@ go test -bench .
 
 import "testing"
 
-var list []int = []int{1, 2, 3, 4}
+var list = []int{1, 2, 3, 4}
 
 func TestSum(t *testing.T) {
 	v := Sum(list)
