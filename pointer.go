@@ -20,6 +20,8 @@ func main() {
   fmt.Println((*d).z) // or we could go through d the hard way
 }
 
+
+// C is a simple struct holding a single value z.
 type C struct {
   z int
 }

@@ -9,7 +9,7 @@ import (
 	"fmt"
 )
 
-
+// Pos describes coordinates on the xy plane.
 type Pos struct {
 	x float64
 	y float64

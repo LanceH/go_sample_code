@@ -29,6 +29,7 @@ func main() {
   }
 }
 
+// Counter prints the count every second
 func Counter() {
   fmt.Println("In Counter()")
   for {
