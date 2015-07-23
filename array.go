@@ -7,7 +7,7 @@ From "Effective Go"
     - In particular, if you pass an array to a function, it will receive a copy of the array, not a pointer to it.
     - The size of an array is part of its type. The types [10]int and [20]int are distinct.
 
-Arrays are very strict and limited and are used internally to build slices.
+Arrays are very strict and limited and are used internally to build slices.  See slices.go.
 
 They are still useful for exact control of memory.
 */
@@ -18,7 +18,7 @@ import (
 
 func main() {
 	// array initialized to values that the base type would initialized to
-	var a = [3]int64{}
+	var a [3]int64
 	for i, j := range a {
 		fmt.Printf("index: %d - value: %d\n\n", i, j)
 	}
@@ -32,7 +32,7 @@ func main() {
 
 	// passing an array to a function copies it
 	// changes in that function don't affect the original
-	copy_test(a)
+	copyTest(a)
 	fmt.Printf("a[0] is unchanged: %d\n\n", a[0])
 }
 
