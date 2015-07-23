@@ -34,6 +34,17 @@ func main() {
 	// changes in that function don't affect the original
 	copyTest(a)
 	fmt.Printf("a[0] is unchanged: %d\n\n", a[0])
+
+	// [3]int64 is an array not a slice
+	// append(a,4)
+	// will not compile:
+	// "first argument to append must be slice; have [3]int64"
+
+	// This is a slice
+	var s []int64
+	fmt.Println(s)
+	s = append(s,1)
+	fmt.Println(s)
 }
 
 // the size of the array is part of the type and must be specified
