@@ -43,7 +43,7 @@ func main() {
 	// This is a slice
 	var s []int64
 	fmt.Println(s)
-	s = append(s,1)
+	s = append(s, 1)
 	fmt.Println(s)
 }
 
