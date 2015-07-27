@@ -1,8 +1,12 @@
 package main
 
-import ("fmt")
+import (
+	"fmt"
+)
 
-var m = make(map[string] string)
+// The type of m below is map[string]string
+// the key and value types are both part of the type also
+var m = make(map[string]string)
 
 func main() {
 	fmt.Println(m) // nil map
