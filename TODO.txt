@@ -1,0 +1,8 @@
+maps
+  I'm sure there is more to note than what I have here
+json
+  load and save structs from json
+  same with nested structs
+  how do pointers behave?
+panic
+  difference between panic and error
