@@ -1,8 +1,8 @@
 package main
 
-import ("fmt")
+import "fmt"
 
-var m = make(map[string] string)
+var m = make(map[string]string)
 
 func main() {
 	fmt.Println(m) // nil map
