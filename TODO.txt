@@ -6,3 +6,7 @@ json
   how do pointers behave?
 panic
   difference between panic and error
+regexp
+  Create & run regexp's
+  backreferences
+  other variables
