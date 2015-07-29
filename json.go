@@ -9,6 +9,7 @@ import (
 )
 
 var a = `{"one": "1"}`
+var b = `{"C": {"x": "3"}, "one" : "1"}`
 
 func main() {
 
@@ -22,8 +23,28 @@ func main() {
 		}
 		fmt.Printf("one: %s\n", n.One)
 	}
+
+	decoder = json.NewDecoder(strings.NewReader(b))
+	for {
+		var b Bee
+		if err := decoder.Decode(&b); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(b)
+	}
 }
 
 type Number struct {
 	One string
+}
+
+type Bee struct {
+	C   *Cee
+	One string
+}
+
+type Cee struct {
+	X string
 }
