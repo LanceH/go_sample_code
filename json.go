@@ -41,7 +41,7 @@ type Number struct {
 }
 
 type Bee struct {
-	C   *Cee
+	C   Cee
 	One string
 }
 
