@@ -10,3 +10,7 @@ regexp
   Create & run regexp's
   backreferences
   other variables
+image
+	create an image
+	draw on it
+	save it
