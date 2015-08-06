@@ -15,7 +15,7 @@ func main() {
 
 	decoder := json.NewDecoder(strings.NewReader(a))
 	for {
-		var n Number
+		var n number
 		if err := decoder.Decode(&n); err == io.EOF {
 			break
 		} else if err != nil {
@@ -26,7 +26,7 @@ func main() {
 
 	decoder = json.NewDecoder(strings.NewReader(b))
 	for {
-		var b Bee
+		var b bee
 		if err := decoder.Decode(&b); err == io.EOF {
 			break
 		} else if err != nil {
@@ -36,15 +36,15 @@ func main() {
 	}
 }
 
-type Number struct {
+type number struct {
 	One string
 }
 
-type Bee struct {
-	C   Cee
+type bee struct {
+	C   cee
 	One string
 }
 
-type Cee struct {
+type cee struct {
 	X string
 }
