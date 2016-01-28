@@ -9,8 +9,10 @@ a go vet warning due to a mismatch of %s asking for a
 string and 33 being an int.
 */
 
-import("fmt")
+import (
+	"fmt"
+)
 
 func main() {
-  fmt.Printf("%s", 33)
+	fmt.Printf("%s", 33)
 }
