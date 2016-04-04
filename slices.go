@@ -16,9 +16,9 @@ func main() {
 	// a is a slice initialized as nil: []
 	// the capacity of the slice is doubled when it needs more
 	// room in the underlying array
-	fmt.Printf("%s has length: %d and capacity %d\n", a, len(a), cap(a))
+	fmt.Printf("%d has length: %d and capacity %d\n", a, len(a), cap(a))
 	a = append(a, 55)
-	fmt.Printf("%s has length: %d and capacity %d\n", a, len(a), cap(a))
+	fmt.Printf("%d has length: %d and capacity %d\n", a, len(a), cap(a))
 	a = append(a, 55)
 	fmt.Printf("%s has length: %d and capacity %d\n", a, len(a), cap(a))
 	a = append(a, 55)
