@@ -47,9 +47,9 @@ func main() {
 		r = r.Next()
 	}
 
-	fmt.Println("Current element is: ", r.Value.(Pos).s)
-	fmt.Println("Removing current element...")
-	r = r.Unlink(r.Len() - 1)
+	fmt.Println("Next element is: ", r.Next().Value.(Pos).s)
+	fmt.Println("Removing next element...")
+	r.Unlink(1)
 	for i := 0; i < r.Len(); i++ {
 		fmt.Println(r.Value.(Pos).s)
 		r = r.Next()
