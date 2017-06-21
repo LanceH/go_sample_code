@@ -12,34 +12,46 @@ import (
 
 // Pos describes coordinates on the xy plane.
 type Pos struct {
-	x float64
-	y float64
+	s string
 }
 
 func main() {
-	p1 := Pos{x: 1.1, y: 1.1}
-	p2 := Pos{x: 2.2, y: 2.2}
-	p3 := Pos{x: 3.3, y: 3.3}
-	p4 := Pos{x: 4.4, y: 4.4}
+	p1 := Pos{s: "first"}
+	p2 := Pos{s: "second"}
+	p3 := Pos{s: "third"}
+	p4 := Pos{s: "fourth"}
 
 	r := ring.New(1)
-	r.Value = p1
+	r.Value = p1 // At the first element
+	fmt.Printf("%+v\n", r.Value)
+
 	r2 := ring.New(1)
 	r2.Value = p2
-	r.Link(r2)
-	r3 := ring.New(2)
+	r.Link(r2)   // still at first element
+	r = r.Next() // at the second element
+	fmt.Printf("%+v\n", r.Value)
+
+	r3 := ring.New(1)
 	r3.Value = p3
-	r3.Next().Value = p4
-	r3 = r3.Next()
-	r3.Link(r)
-	r4 := r3.Next()
-	fmt.Println("r3:", r3.Value.(Pos).x, "r4", r4.Value.(Pos).x)
+	r.Link(r3)   // still at second element
+	r = r.Next() // at the third element
+
+	r4 := ring.New(1)
+	r4.Value = p4
+	r.Link(r4)    // still at third element
+	r = r.Move(2) // move back to the first
 
 	// Iterate through ring and print its contents.
-	for i := 0; i < r.Len()*2; i++ {
-		fmt.Println(r.Value.(Pos).x)
-		fmt.Println(r.Value.(Pos).y)
+	for i := 0; i < r.Len(); i++ {
+		fmt.Println(r.Value.(Pos).s)
 		r = r.Next()
 	}
 
+	fmt.Println("Current element is: ", r.Value.(Pos).s)
+	fmt.Println("Removing current element...")
+	r = r.Unlink(r.Len() - 1)
+	for i := 0; i < r.Len(); i++ {
+		fmt.Println(r.Value.(Pos).s)
+		r = r.Next()
+	}
 }
